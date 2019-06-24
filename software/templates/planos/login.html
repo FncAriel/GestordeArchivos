@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/></meta>
+        <title>Iniciar sesión</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+        <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'></link>
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">3DMENTE</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="post" id='form_login'>
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>Usuario:</label>
+                                    {{ form.username }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Contraseña:</label>
+                                    {{ form.password }}
+                                </div>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" name="login"/>Login</button>
+                                <button class="btn btn-lg btn-success btn-block" onclick="location.href='{% url 'registrar' %}'" type="button">Registrar</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Inmobiliaria</td>
+			<td>Proyecto Inmobiliario</td>
+			<td>Fecha de Entrega</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for proyecto in object_list %}
+		<tr>
+			<td>{{ proyecto.id}}</td>
+      <td>{{ proyecto.inmobiliaria}}</td>
+			<td><a href="{% url 'index_planos' %}" class="btn btn-default">{{ proyecto.proyecto_inmobiliario}}</a></td>
+			<td>{{ proyecto.entrega_total }}</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay proyectos asociados</h1>
+		{% endif %}
+	</tbody>
+{% endblock %}

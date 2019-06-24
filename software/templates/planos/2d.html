@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url '2d' %}">Trabajo 2D</a></li>
+  <li><a href="{% url '3d' %}">Trabajo 3D</a></li>
+  <li><a href="{% url 'videos' %}">Videos</a>
+  <li><a href="">Realidad Virtual</a></li>
+  <li><a href="{% url 'colablist' %}">Colaboradores</a></li>
+  <li><a href="{% url 'arquitecto_nuevo' %}">Añadir colaborador</a></li>
+
+</ul>
+
+  <ul>
+    <li><a href="{% url 'upload_planos' %}">Plantas</a></li>
+    <li><a href="{% url 'upload_planos' %}">Masterplan</a></li>
+    <li><a href="{% url 'upload_planos' %}">Cubierta</a><li>
+    <li><a href="{% url 'upload_planos' %}">Pisostipo</a></li>
+    <li><a href="{% url 'upload_planos' %}">Emplazamiento</a></li>
+    <li><a href="{% url 'upload_planos' %}">Referencia estética</a></li>
+  </ul>
+
+
+
+{% endblock %}

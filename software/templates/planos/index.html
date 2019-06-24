@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>{% block title %} Índice {% endblock %}</title>
+  </head>
+  <body>
+
+    <ul>
+  <li><a href="{% url 'index' %}">Inicio</a></li>
+  <li><a href="{% url 'proyecto_nuevo' %}">Crear Proyecto</a></li>
+  <li><a href="{% url 'proyecto_listar' %}">Proyectos</a></li>
+  <li style="float:right"><a class="active" href="{% url 'login' %}">Login</a></li>
+</ul>
+  {% block header %}
+
+BIENVENIDO A LA PÁGINA DE GESTOR DE PROYECTOS DE 3DMENTE.
+
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% block footer %}
+
+  {% endblock %}
+
+  </body>
+</html>
